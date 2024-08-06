@@ -5,6 +5,7 @@ services:
     image: 'trinodb/trino:351'
     ports:
       - '9087:8080'
+      - '8443:8443'
     volumes:
       - ./etc:/usr/lib/trino/etc:ro
     networks:

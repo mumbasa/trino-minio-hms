@@ -1,3 +1,4 @@
+
 #single node install config
 coordinator=true
 node-scheduler.include-coordinator=true
@@ -6,12 +7,12 @@ discovery-server.enabled=true
 discovery.uri=http://localhost:8080
 http-server.https.enabled=true
 http-server.https.port=8443
-http-server.https.keystore.path=./etc/trino.pem
+http-server.https.keystore.path=./etc/key.pem
 http-server.authentication.type=PASSWORD
-http-server.https.included-cipher=TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_128_CBC_SHA256
-http-server.https.excluded-cipher=
+#password-authenticator.name=file
+#file.password-file=password.db
 
 # needed to treat https requests over http as secure (in katakoda)
 # https://github.com/prestosql/presto/pull/1442
 # https://github.com/prestosql/presto/pull/3714
-http-server.process-forwarded=false
+http-server.process-forwarded=true
